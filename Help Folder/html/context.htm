@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	</head>
+	<script language="javascript" type="text/javascript">
+		var html_by_id = new Array(17);
+		html_by_id['0fb11fbcb0564b9b8a31fc2947b57c21'] = '0fb11fbcb0564b9b8a31fc2947b57c21.html';
+		html_by_id['36a8f8e406434fcc983ec219a6786f3a'] = '36a8f8e406434fcc983ec219a6786f3a.html';
+		html_by_id['390018c943cb4f158be5d23212d90d62'] = '390018c943cb4f158be5d23212d90d62.html';
+		html_by_id['57d12be54ef14ed4a6e3e98ac6692f2e'] = '57d12be54ef14ed4a6e3e98ac6692f2e.html';
+		html_by_id['5b0e553faf4b4d8282d5d4df64409c19'] = '5b0e553faf4b4d8282d5d4df64409c19.html';
+		html_by_id['6d92f5cf1d16402c9dec4fd511b96f67'] = '6d92f5cf1d16402c9dec4fd511b96f67.html';
+		html_by_id['7f8e18a64838478e92157c2e9980aecb'] = '7f8e18a64838478e92157c2e9980aecb.html';
+		html_by_id['826edca4a27f417aa944f45d97632eca'] = '826edca4a27f417aa944f45d97632eca.html';
+		html_by_id['94de2230395c4f88bf39e019fd79b816'] = '94de2230395c4f88bf39e019fd79b816.html';
+		html_by_id['9cefe17d8669496bb7761b6039d45b77'] = '9cefe17d8669496bb7761b6039d45b77.html';
+		html_by_id['a425c98658cb4eb6a601ac6dc17c5fe8'] = 'a425c98658cb4eb6a601ac6dc17c5fe8.html';
+		html_by_id['aebea8d795a243a2bf086eb4f9702873'] = 'aebea8d795a243a2bf086eb4f9702873.html';
+		html_by_id['bc00a4be620646caabea0f24bb8f178f'] = 'bc00a4be620646caabea0f24bb8f178f.html';
+		html_by_id['bf32249e397e48f892101bdf62c6d694'] = 'bf32249e397e48f892101bdf62c6d694.html';
+		html_by_id['cd39ba0241a14201b5eac4fa514c6d9b'] = 'cd39ba0241a14201b5eac4fa514c6d9b.html';
+		html_by_id['d562b443cab1479db864348c035d5041'] = 'd562b443cab1479db864348c035d5041.html';
+		html_by_id['ff3198099bf34e83a02aef250ad74309'] = 'ff3198099bf34e83a02aef250ad74309.html';
+		var longueur, donnees, data, i, position, variable, pos, valeur, html, urlvar = new Array(), urlvarnum = new Array();
+		if (window.location.search !== "")
+		{
+			longueur = window.location.search.length - 1;
+			data = window.location.search.substr(1, longueur);
+			donnees = data.split("&");
+			urlvar = new Array();
+			urlvarnum = new Array();
+			for (var i=0; i < donnees.length; i = i + 1)
+			{
+				position = donnees[i].indexOf("=");
+				variable = donnees[i].substr(0, position);
+				pos = position + 1;
+				valeur = decodeURI(donnees[i].substr(pos,donnees[i].length));
+				while (valeur.search(/\+/) !== -1)
+				{
+					valeur = valeur.replace(/\+/," ");
+				}
+				urlvar[variable] = valeur;
+				urlvarnum[i] = valeur;
+			}
+			html = html_by_id[urlvar['contextid']];
+			if (html !== null && html !== undefined )
+			{
+				document.write("<meta http-equiv=\"Refresh\" content=\"1;url=../${args.dhtml.frameset}.html?" + html + "\">");
+			}
+			else
+			{
+				document.write("<meta http-equiv=\"Refresh\" content=\"1;url=../${args.dhtml.frameset}.html\">");
+			}
+		}
+		else
+		{
+			document.write("<meta http-equiv=\"Refresh\" content=\"1;url=${args.dhtml.frameset}.html\">");
+			document.write("<meta http-equiv=\"Refresh\" content=\"1;url=../${args.dhtml.frameset}.html\">");
+		}
+	</script>
+</html>

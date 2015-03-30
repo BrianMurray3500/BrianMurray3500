@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html><head><meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<title>SAP BuildKnowledge Center</title>
+<link type="image/x-icon" href="resources/sap/ui/core/mimes/logo/favicon.ico" rel="shortcut icon"/>
+<link type="image/x-icon" href="resources/sap/ui/core/mimes/logo/favicon.ico" rel="icon"/>
+<style>
+
+			#content {
+				box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				-webkit-box-sizing: border-box;
+				width: 100%;
+				height: 100%;
+				padding-left: 5px;
+			}
+						
+			#demokitShell .sapUiUx3ShellCanvas{
+				bottom: 0px;
+			}
+			
+			#demokitShell .sapUiVerticalSplitterBar {
+    			background-color: #EEEEEE;
+			}
+			
+			#demokitShell .sapUiVerticalSplitterBar:hover {
+    			background-color: #EEEEEE;
+			}
+			
+			#demokitShell .sapUiUx3ShellContent {
+			    bottom: 0;
+			    left: 0;
+			    position: absolute;
+			    right: 0;
+			    top: 3px;
+			    width: 100%;
+			}
+			
+			#logo {
+				position: absolute;
+				display: inline-block;
+				right: 5px;
+				/*top: 35px;*/
+			}
+
+			.grTagCloud.sapUiTagCloud {
+			  margin-top: 5px;
+			  padding-top: 5px;
+			  border-top: solid 2px #999999;
+			  width: 400px;
+			}
+					
+			.grTagCloud.sapUiTagCloud > span {	
+			  color : #999999;
+			  display: inline-block;
+			  margin: 2px 5px;
+			}
+			
+			.grTagCloud.sapUiTagCloud > span:hover {	
+			  color : #FFFFFF;
+			}
+			
+			#version {
+			  color : #F2F2F2;
+			}
+			
+		</style>
+<script id="sap-ui-bootstrap" type="text/javascript" src="resources/sap-ui-core.js?x=27300362265259226" data-sap-ui-theme="sap_crystalblue" data-sap-ui-libs="sap.ui.commons, sap.ui.ux3"> </script>
+<script type="text/javascript" src="js/dynamic-mode-check.js"> </script>
+<script>
+		var sBaseUrl = window.location.pathname;
+		sBaseUrl = sBaseUrl .split('/').slice(0,-1).join('/') + '/';
+
+		
+
+	var oProjectsLinks = {prefix: ""};
+	oProjectsLinks.links = [
+		
+		
+				{text: "Build Projects", 
+				tooltip: "", 
+				
+						ref: oProjectsLinks.prefix+"aebea8d795a243a2bf086eb4f9702873.html",
+					
+				links: [
+				{text: "Create Projects", 
+				tooltip: "", 
+				
+						ref: oProjectsLinks.prefix+"cd39ba0241a14201b5eac4fa514c6d9b.html",
+					
+				links: []}]},
+				{text: "Project Teams", 
+				tooltip: "", 
+				
+						ref: oProjectsLinks.prefix+"9cefe17d8669496bb7761b6039d45b77.html",
+					
+				links: [
+				{text: "Invite Team Members", 
+				tooltip: "", 
+				
+						ref: oProjectsLinks.prefix+"7f8e18a64838478e92157c2e9980aecb.html",
+					
+				links: []}]},
+				{text: "Project Documents", 
+				tooltip: "", 
+				
+						ref: oProjectsLinks.prefix+"a425c98658cb4eb6a601ac6dc17c5fe8.html",
+					
+				links: [
+				{text: "Upload Project Documents", 
+				tooltip: "", 
+				
+						ref: oProjectsLinks.prefix+"36a8f8e406434fcc983ec219a6786f3a.html",
+					
+				links: []}]}
+	];
+
+
+
+	var oPrototypesLinks = {prefix: ""};
+	oPrototypesLinks.links = [
+		
+		
+				{text: "Prototypes", 
+				tooltip: "", 
+				
+						ref: oPrototypesLinks.prefix+"5b0e553faf4b4d8282d5d4df64409c19.html",
+					
+				links: []}
+	];
+
+
+
+	var oDataModelLinks = {prefix: ""};
+	oDataModelLinks.links = [
+		
+		
+				{text: "Data Models", 
+				tooltip: "", 
+				
+						ref: oDataModelLinks.prefix+"826edca4a27f417aa944f45d97632eca.html",
+					
+				links: []}
+	];
+
+
+
+	var oUserResearchLinks = {prefix: ""};
+	oUserResearchLinks.links = [
+		
+		
+				{text: "User Research Studies", 
+				tooltip: "", 
+				
+						ref: oUserResearchLinks.prefix+"bc00a4be620646caabea0f24bb8f178f.html",
+					
+				links: [
+				{text: "Create User Research Studies", 
+				tooltip: "", 
+				
+						ref: oUserResearchLinks.prefix+"6d92f5cf1d16402c9dec4fd511b96f67.html",
+					
+				links: []},
+				{text: "Guidelines for Study Names and Descriptions", 
+				tooltip: "", 
+				
+						ref: oUserResearchLinks.prefix+"d562b443cab1479db864348c035d5041.html",
+					
+				links: []},
+				{text: "Guidelines for Adding Images and Prototypes", 
+				tooltip: "", 
+				
+						ref: oUserResearchLinks.prefix+"0fb11fbcb0564b9b8a31fc2947b57c21.html",
+					
+				links: []},
+				{text: "Guidelines for Adding Questions", 
+				tooltip: "", 
+				
+						ref: oUserResearchLinks.prefix+"57d12be54ef14ed4a6e3e98ac6692f2e.html",
+					
+				links: []},
+				{text: "Invite Third Parties to Participate", 
+				tooltip: "", 
+				
+						ref: oUserResearchLinks.prefix+"94de2230395c4f88bf39e019fd79b816.html",
+					
+				links: []},
+				{text: "Participate in User Research Studies", 
+				tooltip: "", 
+				
+						ref: oUserResearchLinks.prefix+"bf32249e397e48f892101bdf62c6d694.html",
+					
+				links: []},
+				{text: "View and Analyze Response to Research Studies", 
+				tooltip: "", 
+				
+						ref: oUserResearchLinks.prefix+"ff3198099bf34e83a02aef250ad74309.html",
+					
+				links: [
+				{text: "Pause, Archive, and Restart Research Studies", 
+				tooltip: "", 
+				
+						ref: oUserResearchLinks.prefix+"390018c943cb4f158be5d23212d90d62.html",
+					
+				links: []}]}]}
+	];
+
+
+	var iDefaultTopLevelNavItemIdx = 0;
+	var aTopLevelNavItems = [
+	
+	
+	
+	{id: "Projects", text: "Projects", ref:"aebea8d795a243a2bf086eb4f9702873.html", prefix: "aebea8d795a243a2bf086eb4f9702873.html", links: oProjectsLinks},
+	
+	{id: "Prototypes", text: "Prototypes", ref:"5b0e553faf4b4d8282d5d4df64409c19.html", prefix: "5b0e553faf4b4d8282d5d4df64409c19.html", links: oPrototypesLinks},
+	
+	{id: "DataModel", text: "Data Model", ref:"826edca4a27f417aa944f45d97632eca.html", prefix: "826edca4a27f417aa944f45d97632eca.html", links: oDataModelLinks},
+	
+	{id: "UserResearch", text: "User Research", ref:"bc00a4be620646caabea0f24bb8f178f.html", prefix: "bc00a4be620646caabea0f24bb8f178f.html", links: oUserResearchLinks}
+	
+	
+];
+
+
+		
+
+		var aThemes = ["sap_platinum", "sap_ux", "sap_goldreflection", "sap_hcb"];
+		var sTheme = aThemes[2];
+		var arrayIdx;
+	
+		</script><script>
+// Inital Page handling
+			
+			
+			function getPreferredTopNavItemIdx(sUrl) {
+				for(var i=0; i<aTopLevelNavItems.length; i++){
+					recGetTopNavItem(aTopLevelNavItems[i].links, calcBaseFileName(sUrl), i);
+				}
+				return arrayIdx;
+			}
+
+			 
+			function recGetTopNavItem (tObj, sUrl, i){
+				var lArray = tObj.links;
+				if (lArray !== 'undefined') {
+					for (var j=0;j<lArray.length;j++){
+						if (lArray[j].ref == sUrl){
+							arrayIdx=i;
+						}				
+						else {
+							recGetTopNavItem(lArray[j], sUrl, i);
+						}
+					}
+				}
+			}
+			
+			
+			function calcRelativeUrl(sUrl) {
+				var idx = sUrl.indexOf(sBaseUrl);
+				var tidx = idx + sBaseUrl.length;
+				return calcBaseFileName(sUrl).substring(tidx, sUrl.length);
+				
+				//return sUrl.indexOf(sBaseUrl) == 0 ? sUrl.substring(sBaseUrl.length) : null; 
+			}
+			
+			
+			function calcBaseFileName(sUrl) {
+				var idx = sUrl.lastIndexOf('#');
+				if (idx>0){
+					return sUrl.substring(0, idx);
+				}
+				else {
+					return sUrl;
+				}
+			}
+			
+			var sInitialPage = aTopLevelNavItems[iDefaultTopLevelNavItemIdx].ref;
+
+			var sHash = window.location.hash;
+			if(sHash){
+				sInitialPage = sHash.indexOf("#") === 0 ? sHash.substring(1) : sHash;
+			}
+
+			var sCurrentContent = null;
+
+			
+			// Listen to IFrame load
+			
+			var bIgnoreIFrameOnLoad = false;
+
+			sap.ui.getCore().attachInitEvent(function() {
+				jQuery(window).bind('hashchange', function() { 
+					var hash = window.location.hash; 
+					jQuery.sap.log.info("Hash Changed occured  current='"+sCurrentContent+"', new='"+hash+"'");
+					if(hash &&  "#"+sCurrentContent != hash){
+						jQuery.sap.log.info("Hash Changed triggered");
+						navigateTo(hash, true);
+					}
+				});
+			});
+
+			function onContentLoaded() {
+				var oContentWindow = jQuery("#content")[0].contentWindow;
+			    var sIFrameContent = calcRelativeUrl(oContentWindow.location.href);
+			    if(sIFrameContent && !bIgnoreIFrameOnLoad){
+			    	navigateTo(sIFrameContent, true, true);
+			    	window.location.replace("#"+sIFrameContent);
+			    }
+			    applyTheme();
+			    bIgnoreIFrameOnLoad = false;
+			    
+			    jQuery(oContentWindow).bind("hashchange", function() {
+				    var sIFrameContent = calcRelativeUrl(oContentWindow.location.href);
+				    if(sIFrameContent && !bIgnoreIFrameOnLoad){
+				    	navigateTo(sIFrameContent, true, true);
+				    	window.location.hash = sIFrameContent;
+				    }
+				    bIgnoreIFrameOnLoad = false;
+			    });
+			}
+
+</script>
+<script>
+
+//Init the UI
+			
+			function createNavigationTree(oTopLevelNavItem){
+				var initLinks = function(oTarget, aLinks, iLevel){
+					for(var i=0; i<aLinks.length; i++){
+						var oNode = new sap.ui.commons.TreeNode({text: aLinks[i].text, tooltip: aLinks[i].tooltip, expanded: iLevel<2, selectable: !!aLinks[i].ref, icon: aLinks[i].ico ? aLinks[i].ico : null});
+						oTarget.addNode(oNode);
+						oNode._ref_ = aLinks[i].ref;
+						if(aLinks[i].links && aLinks[i].links.length > 0) initLinks(oNode, aLinks[i].links, iLevel+1);
+						var f = function(oNode){
+							return function(oEvent){navigateTo(oNode._ref_);};
+						}
+						oNode.attachSelected(f(oNode));
+					}
+				};
+
+				if(oTopLevelNavItem.links.nav) return;
+				
+				var oTree = new sap.ui.commons.Tree(oTopLevelNavItem.id + "-index", {showHeader: false, width: "100%", height: "100%", showHorizontalScrollbar: true});
+				initLinks(oTree, oTopLevelNavItem.links.links, 0);
+				oTopLevelNavItem.links.nav = oTree;
+			}
+
+			
+
+			var oContent = new sap.ui.core.HTML("contentCtrl", {
+					
+					content: 
+					"<iframe id=\"content\" name=\"content\" src=\""+sInitialPage+"\" frameborder=\"0\" onload=\"onContentLoaded();\"> </iframe>"
+					
+				});
+
+			var oSidePanelLayout = new sap.ui.commons.layout.AbsoluteLayout();
+			for(var i=0; i<aTopLevelNavItems.length; i++){
+				createNavigationTree(aTopLevelNavItems[i]);
+			}
+
+			oSidePanelLayout.addContent(aTopLevelNavItems[0].links.nav, {top:"0", bottom:"0", left:"0", right:"0"});
+			
+		    var oShell = new sap.ui.ux3.Shell("demokitShell", {
+		        appTitle: "SAP BuildKnowledge Center",
+		        showLogoutButton:false,
+		        showInspectorTool:false,
+		        showFeederTool:false,
+		        showSearchTool:true,  
+		       search: function(oEvent){
+					navigateTo("search.html?search=" + encodeURIComponent(oEvent.getParameter("text")));
+					sap.ui.getCore().byId("demokitShell-searchTool").close();
+				},
+				worksetItemSelected:function(oEvent){
+					navigateTo(oEvent.getParameter("item")._itemData_.ref);
+				},
+				content:[
+					new sap.ui.commons.Splitter({
+						width:"100%",
+						height:"100%",
+						splitterPosition:"17em",
+						firstPaneContent:[oSidePanelLayout],
+						secondPaneContent:[oContent],
+						showScrollBars:false
+					})
+				],
+				headerItems:[new sap.ui.commons.Label("version", {text: ""})]
+		    });
+		    oShell.placeAt("ctrRoot");
+		    
+		    var oSearchField = oShell.getSearchField();
+		    oSearchField.setEnableListSuggest(true);
+		    oSearchField.setShowListExpander(false);
+		    oSearchField.setVisibleItemCount(5);
+		    oSearchField.setSearchProvider(new sap.ui.commons.SearchProvider({
+				suggestType: "json",
+				suggestUrl: "/demokit/suggest?q={searchTerms}"
+			}));
+
+		    for(var i=0; i<aTopLevelNavItems.length; i++){
+				var navItem = new sap.ui.ux3.NavigationItem({key: aTopLevelNavItems[i].id, text: aTopLevelNavItems[i].text});
+				navItem._itemData_ = aTopLevelNavItems[i];
+				oShell.addWorksetItem(navItem);
+			}
+
+		  // dynamically add sap.ui.dev, if it is available in the neighborhood
+			if ( jQuery.sap.syncHead("/sapui5-internal/resources/sap/ui/dev/TagCloud.js") ) {
+
+				jQuery.sap.registerModulePath("sap.ui.dev", "/sapui5-internal/resources/sap/ui/dev/");
+				jQuery.sap.require("sap.ui.dev.TagCloud");
+
+				// request top keywords
+				jQuery.ajax({
+					url : "keywords?kind=tags&max=50",
+					dataType : "json",
+					success : function(data, status, xhr) { 
+						if ( data && data[0] && data[0].success && data[0].keywords && data[0].keywords.length ) {
+							addTagCloud(data[0].keywords);
+							oSearchField.setWidth("80%");
+						}
+					} 
+				})
+				    
+				function addTagCloud(aKeywords) {
+					
+				 	var oTagCloud = new sap.ui.dev.TagCloud({
+				 		minFontSize:15, 
+				 		maxFontSize:30,
+				 		press : function (oEvent) {
+					 		var term = sap.ui.getCore().byId(oEvent.getParameter("tagId")).getText();
+					 		oShell.fireSearch({text : term});
+					 	}
+				 	}).addStyleClass("grTagCloud");
+				 	for(var i=0; i<aKeywords.length; i++) {
+				 		oTagCloud.addTag(new sap.ui.dev.Tag({ text : aKeywords[i].tag, weight : aKeywords[i].score }));
+				 	}
+				 	
+				 	// enhance the original search tool
+				 	oShell._getSearchTool && oShell._getSearchTool().addContent(oTagCloud);
+				}
+				 
+			}
+
+			//Others
+
+			function themeChanged(oEvent) {
+				var newTheme = oEvent.getParameter("newValue");
+	
+				for(x in sap.ui.testfwk.TestFWK.THEMES){
+					if(sap.ui.testfwk.TestFWK.THEMES[x] == newTheme){
+						sTheme = x;
+						applyTheme();
+						sap.ui.getCore().byId("themeSwitchPopup").close();
+						break;
+					}
+				}
+			}
+
+			function applyTheme() {
+				var oContentWindow = jQuery("#content")[0].contentWindow;
+				var sIFrameContent = calcRelativeUrl(oContentWindow.location.href);
+				if(sIFrameContent
+						&& (jQuery.sap.startsWith(sIFrameContent, aTopLevelNavItems[0].prefix) || jQuery.sap.startsWith(sIFrameContent, aTopLevelNavItems[0].prefix))
+						&& oContentWindow 
+						&& oContentWindow.sap 
+						&& oContentWindow.sap.ui
+						&& oContentWindow.sap.ui.getCore ) {
+					
+					//Find supported themes
+					var aSupportedThemes = oContentWindow.sap.ui.demokit && oContentWindow.sap.ui.demokit._supportedThemes ? oContentWindow.sap.ui.demokit._supportedThemes : aThemes;
+					
+					//Update theme switch 
+					var aItems = oThemeSwitch.getItems();
+					for(var i=0; i<aItems.length; i++) {
+						aItems[i].setEnabled(jQuery.inArray(aItems[i].getKey(), aSupportedThemes) >= 0);
+					}
+					
+					//Current theme is not supported -&gt; Use a different one 
+					if(jQuery.inArray(sTheme, aSupportedThemes) < 0){
+						sTheme = aSupportedThemes[0];
+						oThemeSwitch.setValue(sap.ui.testfwk.TestFWK.THEMES[sTheme]); 
+					}
+					
+					oContentWindow.sap.ui.getCore().applyTheme(sTheme);
+				} 
+			}
+
+			var sSelectedWorkSetItem = null;
+		
+			function navigateTo(sPageName, bSkipSetHash, bSkipSwitchLocation) {
+				sPageName = sPageName.indexOf("#") === 0 ? sPageName.substring(1) : sPageName;
+				
+				if(sCurrentContent == sPageName) return;
+				
+				var oContentWindow = jQuery("#content")[0].contentWindow;
+				sCurrentContent = sPageName;
+	
+				function findAndSelectTreeNode(sPageName, oParent, bClearSelection) {
+					if(bClearSelection && oParent.selectedNode) oParent.selectedNode.setIsSelected(false);
+					var aNodes = oParent.getNodes();
+					for(var i=0; i<aNodes.length; i++){
+						if(aNodes[i]._ref_ && aNodes[i]._ref_.indexOf(sPageName) >= 0){
+							aNodes[i].setIsSelected(true);
+							var par = oParent;
+							while(par instanceof sap.ui.commons.TreeNode){
+								par.expand();
+								par = par.getParent();
+							}
+							return aNodes[i];
+						}else{
+							var node = findAndSelectTreeNode(sPageName, aNodes[i], false);
+							if(node) return node;
+						}
+					}
+					return null;
+				}
+
+				//Update Top Level Navigation and Navigation Tree
+				var topNavIdx = getPreferredTopNavItemIdx(sPageName);
+				var oSelectedNavEntry = null;
+				if(topNavIdx >= 0 && (!sSelectedWorkSetItem || (sSelectedWorkSetItem && sSelectedWorkSetItem != oShell.getWorksetItems()[topNavIdx].getId()))){
+					var oNewItem = oShell.getWorksetItems()[topNavIdx];
+					oShell.setSelectedWorksetItem(oNewItem);
+					oSidePanelLayout.removeAllContent();
+					oSidePanelLayout.addContent(oNewItem._itemData_.links.nav);
+					oSelectedNavEntry = findAndSelectTreeNode(sPageName, oNewItem._itemData_.links.nav, true);
+
+					//Hide/Show Theme Switch
+					if(topNavIdx == -1){
+						if(oShell.getToolPopups().length == 0){
+							oShell.addToolPopup(oThemeSwitchPopup);
+						}
+					}else{
+						oShell.removeAllToolPopups();
+					}
+				}else{
+					oSelectedNavEntry = findAndSelectTreeNode(sPageName, oSidePanelLayout.getContent()[0], true);
+					//If no entry is found, try again without hash
+					if (!oSelectedNavEntry && sPageName.indexOf("#") > 0) {
+						var sShortName = sPageName.substr(0, sPageName.indexOf("#") - 1);
+						oSelectedNavEntry = findAndSelectTreeNode(sShortName, oSidePanelLayout.getContent()[0]);
+					}
+
+				}
+
+				sap.ui.getCore().applyChanges();
+				sSelectedWorkSetItem = oShell.getSelectedWorksetItem();
+
+				//Update IFrame content and URL hash
+				if(!bSkipSetHash) {
+					window.location.hash = sPageName;
+				}
+				if(!bSkipSwitchLocation){
+					bIgnoreIFrameOnLoad = true;
+					oContentWindow.location.replace((sPageName.indexOf("/") == 0 ? "" : sBaseUrl) + sPageName);
+				}
+			}
+</script>
+</head><body class="sapUiBody" role="application"><div id="ctrRoot"> </div><div id="logo" style="z-index:7;"><span><a class="copyright" href="http://www.sap.com/corporate-en/legal/copyright/index.epx" target="_blank">Copyright</a></span>
+</div></body></html>
